@@ -9,6 +9,43 @@ import { RegisterPageComponent } from './componentes/register-page/register-page
 import { LoginPageComponent } from './componentes/login-page/login-page.component';
 import { PrivatePageComponent } from './componentes/private-page/private-page.component';
 import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
+ 
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+  LinkedinLoginProvider,
+  VkontakteLoginProvider,
+  AuthService,
+} from "angular-6-social-login-v2";
+
+
+// Configs 
+export function getAuthServiceConfigs() {
+let config = new AuthServiceConfig(
+    [
+      {
+        id: FacebookLoginProvider.PROVIDER_ID,
+        provider: new FacebookLoginProvider("329124954489538")
+      },
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider("56917703239-ii5rvi60bif8ih748pm3hs32jdui4ip1.apps.googleusercontent.com")
+        // provider: new GoogleLoginProvider("56917703239-bgdll4fnutob46p8of6gt1k74tjp6r1k.apps.googleusercontent.com") //OAauth
+      },
+      {
+        id: VkontakteLoginProvider.PROVIDER_ID,
+        provider: new VkontakteLoginProvider("Your-VK-Client-Id")
+      },        
+        {
+          id: LinkedinLoginProvider.PROVIDER_ID,
+          provider: new LinkedinLoginProvider("1098828800522-m2ig6bieilc3tpqvmlcpdvrpvn86q4ks.apps.googleusercontent.com")
+        },
+    ]
+)
+return config;
+}
 
 @NgModule({
   declarations: [
@@ -21,10 +58,17 @@ import { NotFoundPageComponent } from './componentes/not-found-page/not-found-pa
     NotFoundPageComponent
   ],
   imports: [
+    SocialLoginModule,
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
