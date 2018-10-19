@@ -14,9 +14,14 @@ import { NotFoundPageComponent } from './componentes/not-found-page/not-found-pa
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
+
+import {FlashMessagesModule} from 'angular2-flash-messages';
+import {FlashMessagesService} from 'angular2-flash-messages';
+
 import {environment} from '../environments/environment';
 import {AuthService} from './servicios/auth.service';
 import {AuthGuard} from './guards/auth.guard';
+
 
 @NgModule({
   declarations: [
@@ -34,9 +39,10 @@ import {AuthGuard} from './guards/auth.guard';
     FormsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FlashMessagesModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
