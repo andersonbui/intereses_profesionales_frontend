@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 @Injectable()
 
 export class AuthService {
-
+  
   constructor(
     public afAuth: AngularFireAuth
   ) { }

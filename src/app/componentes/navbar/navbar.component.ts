@@ -9,13 +9,30 @@ import { auth } from 'firebase/app';
 })
 export class NavbarComponent implements OnInit {
 
+  public nombreUsuario: string;
+  public isLogin: boolean;
+  public emailUsuario: string;
+
   constructor(
-    
+    public authService: AuthService
+
   ) { }
 
   ngOnInit() {
+    this.authService.getAuth().subscribe(auth => {
+      if(auth){
+        this.isLogin = true;
+        this.nombreUsuario = auth.displayName;
+        this.emailUsuario = auth.email;
+      }else{
+        this.isLogin = false;
+      }
+    })
   }
 
+  onClickLogout(){
+    this.authService.logout();
+  }
   
 
 }
