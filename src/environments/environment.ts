@@ -4,12 +4,15 @@
 
 export const environment = {
   production: false,
-  apiKey: "AIzaSyBmsULhn9jPZnpXVwzVH9bHlUtrIblNHLQ",
-  authDomain: "interesesprofesionalesfrontend.firebaseapp.com",
-  databaseURL: "https://interesesprofesionalesfrontend.firebaseio.com",
-  projectId: "interesesprofesionalesfrontend",
-  storageBucket: "",
-  messagingSenderId: "286628946033"
+  firebaseConfig: {
+    apiKey: "AIzaSyBmsULhn9jPZnpXVwzVH9bHlUtrIblNHLQ",
+    authDomain: "interesesprofesionalesfrontend.firebaseapp.com",
+    databaseURL: "https://interesesprofesionalesfrontend.firebaseio.com",
+    projectId: "interesesprofesionalesfrontend",
+    storageBucket: "interesesprofesionalesfrontend.appspot.com",
+    messagingSenderId: "286628946033"
+  }
+
 };
 
 /*
