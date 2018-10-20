@@ -8,6 +8,14 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Code scaffolding
 
+run with ssl 
+
+ng serve \
+    --ssl true \
+    --ssl-cert "/home/debian/.ssl/server.crt" \
+    --ssl-key "/home/debian/.ssl/server.key"
+    
+
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
