@@ -10,7 +10,7 @@ import {NotFoundPageComponent} from './componentes/not-found-page/not-found-page
 import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
-  {path: '', component: HomePageComponent},
+  {path: '', component: LoginPageComponent},
   {path: 'login', component: LoginPageComponent},
   {path: 'register', component: RegisterPageComponent},
   {path: 'private', component: PrivatePageComponent, canActivate: [AuthGuard]},
