@@ -26,7 +26,7 @@ export class RegisterPageComponent implements OnInit {
     .then ((res) => {
       this.flashMensaje.show("Usuario creado exitosamente.", 
       {cssClass: 'alert-success', timeout: 4000});
-     this.router.navigate(['/privado']);
+     this.router.navigate(['/private']);
     }).catch ((err) => {
       this.flashMensaje.show(err.message, 
       {cssClass: 'alert-danger', timeout: 4000});
