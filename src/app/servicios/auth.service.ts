@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
+import { firebase } from '@firebase/app';
 import { map } from 'rxjs/operators';
 // import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
@@ -9,17 +9,17 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-  private user: Observable<firebase.User>;
   
   constructor(
-    public afAuth: AngularFireAuth,
-    private _firebaseAuth: AngularFireAuth, private router: Router
-  ) {
-    this.user = _firebaseAuth.authState;
-   }
+    public afAuth: AngularFireAuth
+  ) {}
 
   loginGoogle() {
     return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+
+  loginFacebook() {
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
   }
 
   registerUser(email: string, pass: string) {

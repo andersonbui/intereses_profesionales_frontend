@@ -35,10 +35,15 @@ export class LoginPageComponent implements OnInit {
   onClickGoogleLogin(){
     this.authService.loginGoogle()
     .then((res) => {
+      console.log(res);
       this.router.navigate(['./private']);
     }).catch(err => console.log(err.message));
   }
   onClickFacebookLogin(){
-    console.log('FACEBOOK');
+    this.authService.loginFacebook()
+    .then((res) => {
+      console.log(res);
+      this.router.navigate(['./private']);
+    }).catch(err => console.log(err.message));
   }
 }
