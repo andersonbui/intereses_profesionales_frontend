@@ -21,6 +21,8 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 import {environment} from '../environments/environment';
 import {AuthService} from './servicios/auth.service';
 import {AuthGuard} from './guards/auth.guard';
+import { AdminUsuariosComponent } from './componentes/private-page/admin-usuarios/admin-usuarios.component';
+import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 @NgModule({
@@ -31,18 +33,24 @@ import {AuthGuard} from './guards/auth.guard';
     RegisterPageComponent,
     LoginPageComponent,
     PrivatePageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    AdminUsuariosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'angular-auth-firebase'),
     AngularFirestoreModule,
     FlashMessagesModule
   ],
-  providers: [AuthService, AuthGuard, FlashMessagesService],
+  providers: [AuthService,
+    AuthGuard,
+    FlashMessagesService,
+    AngularFireDatabase
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

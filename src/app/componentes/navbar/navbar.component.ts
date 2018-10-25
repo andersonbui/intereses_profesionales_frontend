@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../servicios/auth.service';
+import { AuthService } from '../../servicios/auth.service';
 import { auth } from 'firebase/app';
 
 @Component({
@@ -21,20 +21,20 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.authService.getAuth().subscribe(auth => {
-      if(auth){
+      if (auth) {
         this.isLogin = true;
         this.nombreUsuario = auth.displayName;
         this.emailUsuario = auth.email;
         this.fotoUsuario = auth.photoURL;
-      }else{
+      } else {
         this.isLogin = false;
       }
     })
   }
 
-  onClickLogout(){
+  onClickLogout() {
     this.authService.logout();
   }
-  
+
 
 }

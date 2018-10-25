@@ -24,8 +24,14 @@
         <a class="nav-link">{{nombreUsuario}}</a>
       </li>
       <li class="nav-item " *ngIf="isLogin">
-        <img src="{{fotoUsuario}}" class="rounded-circle">
-        <span class="badge pill badge-secondary">{{emailUsuario}}</span>
+
+      <div class="card">
+        <span style="display: inline"  class="badge pill badge-secondary">
+          <img src="{{fotoUsuario}}" class="rounded-circle" *ngIf="fotoUsuario">
+        <img src="/src/assets/imgs/img_avatar.png" style="display: inline" class="rounded-circle" *ngIf="!fotoUsuario">
+        {{emailUsuario}}</span>
+          
+      </div>
       </li>
       
     </ul>

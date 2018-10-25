@@ -1,0 +1,8 @@
+<p>
+  admin-usuarios works!
+</p>
+
+<button *ngIf="auth.canEdit(auth.user)"
+  (click)="editPost()">
+  Edit Post
+</button>
