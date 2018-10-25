@@ -21,6 +21,8 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 import {environment} from '../environments/environment';
 import {AuthService} from './servicios/auth.service';
 import {AuthGuard} from './guards/auth.guard';
+import { StudentPageComponent } from './componentes/student-page/student-page.component';
+import { EditStudentPageComponent } from './componentes/edit-student-page/edit-student-page.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import {AuthGuard} from './guards/auth.guard';
     RegisterPageComponent,
     LoginPageComponent,
     PrivatePageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    StudentPageComponent,
+    EditStudentPageComponent
   ],
   imports: [
     BrowserModule,
