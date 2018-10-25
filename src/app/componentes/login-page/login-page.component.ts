@@ -21,24 +21,29 @@ export class LoginPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmitLogin(){
-    this.authService.loginEmail(this.email, this.password).then ((res) =>{
-      this.flashMensaje.show("Bienvenido", 
-      {cssClass: 'alert-success', timeout: 4000});
+  onSubmitLogin() {
+    this.authService.loginEmail(this.email, this.password).then((res) => {
+      this.flashMensaje.show('Bienvenido',
+        { cssClass: 'alert-success', timeout: 4000 });
       this.router.navigate(['/private']);
-    }).catch((err) =>{
-      this.flashMensaje.show(err.message, 
-      {cssClass: 'alert-danger', timeout: 4000});
+    }).catch((err) => {
+      this.flashMensaje.show(err.message,
+        { cssClass: 'alert-danger', timeout: 4000 });
       this.router.navigate[('/login')];
-    })
+    });
   }
-  onClickGoogleLogin(){
+
+  onClickGoogleLogin() {
     this.authService.loginGoogle()
-    .then((res) => {
-      this.router.navigate(['./private']);
-    }).catch(err => console.log(err.message));
+      .then((res) => {
+        this.router.navigate(['./private']);
+      }).catch(err => console.log(err.message));
   }
-  onClickFacebookLogin(){
-    console.log('FACEBOOK');
+
+  onClickFacebookLogin() {
+    this.authService.loginFacebook()
+      .then((res) => {
+        this.router.navigate(['./private']);
+      }).catch(err => console.log(err.message));
   }
 }

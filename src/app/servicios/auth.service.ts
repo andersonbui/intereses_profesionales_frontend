@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-import * as firebase from 'firebase/app';
+import { firebase } from '@firebase/app';
 import { map } from 'rxjs/operators';
 // import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
@@ -15,7 +15,6 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
-  // private user: Observable<firebase.User>;
   public user: BehaviorSubject<Usuario> = new BehaviorSubject(null);
 
   constructor(
@@ -49,6 +48,10 @@ export class AuthService {
 
   loginGoogle() {
     return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+
+  loginFacebook() {
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
   }
 
   registerUser(email: string, pass: string) {
@@ -102,12 +105,13 @@ export class AuthService {
 
   ///// Role-based Authorization //////
   canRead(user: Usuario): boolean {
-    const allowed = ['admin', 'editor', 'estudiante'];
+    console.log('canread user;  :', user);
+    const allowed = ['estudiante', 'admin', 'estudiante'];
     return this.checkAuthorization(user, allowed);
   }
 
   canEdit(user: Usuario): boolean {
-    const allowed = ['admin', 'editor'];
+    const allowed = ['admin', 'docente'];
     return this.checkAuthorization(user, allowed);
   }
 
@@ -122,9 +126,9 @@ export class AuthService {
       return false;
     }
     for (const role of allowedRoles) {
-      // if (user.roles[role]) {
-      //   return true;
-      // }
+      if (user.roles[role]) {
+        return true;
+      }
     }
     return false;
   }

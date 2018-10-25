@@ -2,7 +2,17 @@
   admin-usuarios works!
 </p>
 
-<button *ngIf="auth.canEdit(auth.user)"
-  (click)="editPost()">
+<button *ngIf="canRead(user)"
+  (click)="leerPost()">
+  Edit Post
+</button>
+
+<button *ngIf="canEdit(user)"
+  (click)="editarPost()">
+  Edit Post
+</button>
+
+<button *ngIf="canEliminar(user)"
+  (click)="eliminarPost()">
   Edit Post
 </button>

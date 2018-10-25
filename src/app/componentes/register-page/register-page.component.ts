@@ -12,6 +12,8 @@ export class RegisterPageComponent implements OnInit {
 
   public email: string;
   public password: string;
+  public codRegistro: string;
+
   constructor(
     public authService: AuthService,
     public router: Router,
