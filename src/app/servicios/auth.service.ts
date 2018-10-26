@@ -106,7 +106,7 @@ export class AuthService {
   ///// Role-based Authorization //////
   canRead(user: Usuario): boolean {
     console.log('canread user;  :', user);
-    const allowed = ['estudiante', 'admin', 'estudiante'];
+    const allowed = ['estudiante', 'admin', 'docente'];
     return this.checkAuthorization(user, allowed);
   }
 
