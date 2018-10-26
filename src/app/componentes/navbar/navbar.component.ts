@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../servicios/auth.service';
 import { auth } from 'firebase/app';
+import { Usuario } from 'src/app/Usuario';
 
 @Component({
   selector: 'app-navbar',
@@ -29,7 +30,7 @@ export class NavbarComponent implements OnInit {
       } else {
         this.isLogin = false;
       }
-    })
+    });
   }
 
   onClickLogout() {

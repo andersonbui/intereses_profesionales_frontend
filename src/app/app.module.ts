@@ -23,6 +23,8 @@ import {AuthService} from './servicios/auth.service';
 import {AuthGuard} from './guards/auth.guard';
 import { AdminUsuariosComponent } from './componentes/private-page/admin-usuarios/admin-usuarios.component';
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
+import { StudentPageComponent } from './componentes/student-page/student-page.component';
+import { EditStudentPageComponent } from './componentes/edit-student-page/edit-student-page.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/dat
     LoginPageComponent,
     PrivatePageComponent,
     NotFoundPageComponent,
-    AdminUsuariosComponent
+    AdminUsuariosComponent,
+    StudentPageComponent,
+    EditStudentPageComponent
   ],
   imports: [
     BrowserModule,

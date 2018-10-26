@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase } from 'angularfire2/database';
 import { firebase } from '@firebase/app';
 import { map } from 'rxjs/operators';
 // import 'rxjs/add/operator/map';
@@ -10,8 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/switchMap';
 import { Usuario } from '../Usuario';
-import { AngularFireModule } from 'angularfire2';
-import { environment } from '../../environments/environment';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
 export class AuthService {
@@ -19,8 +17,8 @@ export class AuthService {
 
   constructor(
     public afAuth: AngularFireAuth,
-     private afd: AngularFireDatabase,
-    private router: Router
+     private afd: AngularFireDatabase
+    //  , private router: Router
   ) {
     this.afAuth.authState
       .switchMap(auth => {
