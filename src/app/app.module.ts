@@ -26,6 +26,9 @@ import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/dat
 import { StudentPageComponent } from './componentes/student-page/student-page.component';
 import { EditStudentPageComponent } from './componentes/edit-student-page/edit-student-page.component';
 
+import {AccordionModule} from 'primeng/accordion';     // accordion and accordion tab
+import {MenuItem} from 'primeng/api';                 // api
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,8 @@ import { EditStudentPageComponent } from './componentes/edit-student-page/edit-s
     EditStudentPageComponent
   ],
   imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
