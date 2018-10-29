@@ -101,23 +101,6 @@ export class AuthService {
       });
   }
 
-  ///// Role-based Authorization //////
-  canRead(user: Usuario): boolean {
-    console.log('canread user;  :', user);
-    const allowed = ['estudiante', 'admin', 'docente'];
-    return this.checkAuthorization(user, allowed);
-  }
-
-  canEdit(user: Usuario): boolean {
-    const allowed = ['admin', 'docente'];
-    return this.checkAuthorization(user, allowed);
-  }
-
-  canDelete(user: Usuario): boolean {
-    const allowed = ['admin'];
-    return this.checkAuthorization(user, allowed);
-  }
-
   // determines if user has matching role
   private checkAuthorization(user: Usuario, allowedRoles: string[]): boolean {
     if (!user) {

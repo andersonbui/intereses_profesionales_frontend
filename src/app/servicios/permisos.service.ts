@@ -3,9 +3,9 @@ import { AuthService } from './auth.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
-export class PostService {
+export class PermisosService {
 
-  userRoles: Array<string>; // roles of currently logged in uer
+  // userRoles: Array<string>; // roles of currently logged in uer
 
   constructor(
     private auth: AuthService,

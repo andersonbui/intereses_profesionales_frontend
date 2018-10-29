@@ -27,9 +27,9 @@ export class LoginPageComponent implements OnInit {
         { cssClass: 'alert-success', timeout: 4000 });
       this.router.navigate(['/private']);
     }).catch((err) => {
-      this.flashMensaje.show(err.message,
-        { cssClass: 'alert-danger', timeout: 4000 });
-      this.router.navigate[('/login')];
+      // this.flashMensaje.show(err.message,
+      //   { cssClass: 'alert-danger', timeout: 4000 });
+      this.router.navigate(['/login']);
     });
   }
 

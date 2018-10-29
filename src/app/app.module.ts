@@ -21,7 +21,6 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 import {environment} from '../environments/environment';
 import {AuthService} from './servicios/auth.service';
 import {AuthGuard} from './guards/auth.guard';
-import { AdminUsuariosComponent } from './componentes/private-page/admin-usuarios/admin-usuarios.component';
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 import { StudentPageComponent } from './componentes/student-page/student-page.component';
 import { EditStudentPageComponent } from './componentes/edit-student-page/edit-student-page.component';
@@ -29,6 +28,9 @@ import { EditStudentPageComponent } from './componentes/edit-student-page/edit-s
 import {AccordionModule} from 'primeng/accordion';     // accordion and accordion tab
 import {MenuItem} from 'primeng/api';                 // api
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MenuModule } from 'primeng/menu';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { RolGuard } from './guards/rol.guard';
 
 @NgModule({
   declarations: [
@@ -39,11 +41,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     LoginPageComponent,
     PrivatePageComponent,
     NotFoundPageComponent,
-    AdminUsuariosComponent,
     StudentPageComponent,
     EditStudentPageComponent
   ],
   imports: [
+    MenuModule,
+    TabMenuModule,
     BrowserModule,
     BrowserAnimationsModule,
     BrowserModule,
@@ -58,7 +61,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   providers: [AuthService,
     AuthGuard,
     FlashMessagesService,
-    AngularFireDatabase
+    AngularFireDatabase,
+    RolGuard
   ],
   bootstrap: [AppComponent]
 })

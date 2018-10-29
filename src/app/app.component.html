@@ -1,6 +1,46 @@
 <app-navbar></app-navbar>
-<div class="container">
-    <flash-messages></flash-messages>
-    <router-outlet></router-outlet>
-</div>
+<div class=" layout-wrapper">
+    <div id="layout-sidebar" [ngClass]="{'active': menuActive}" *ngIf="isLogin">
+        <!-- linea 280 estilos menu-->
+        <div class="layout-menu">
+            <a id="menu_input" #inputmenutitle [class.active-menuitem]="inputmenutitle.id == activeMenuId" (click)="activeMenuId = (activeMenuId === inputmenutitle.id ? null : inputmenutitle.id)">
+                <img src="assets/images/icons/input-active.svg" class="layout-menu-icon-active" />
+                <img src="assets/images/icons/input.svg" class="layout-menu-icon-inactive" />
+                <span>Administracion</span>
+            </a>
+            <div [ngClass]="{submenushow: (inputmenutitle.id == activeMenuId), 'submenuhide': (inputmenutitle.id != activeMenuId)}">
+                <a [routerLink]="['/gestion-estudiantes']" (click)="menuActive = false">&#9679; Gestion de Estudiantes</a>
+                <a [routerLink]="['/gestion-instituciones']" (click)="menuActive = false">&#9679; Gestion de instituciones</a>
+                <a [routerLink]="['/gestion-docentes']" (click)="menuActive = false">&#9679; Gestion de Docentes</a>
+            </div>
+        
+            <a id="button_menutitle" #buttonmenutitle [class.active-menuitem]="buttonmenutitle.id == activeMenuId"
+                (click)="activeMenuId = (activeMenuId === buttonmenutitle.id ? null : buttonmenutitle.id)">
+                <img src="assets/images/icons/button-active.svg" class="layout-menu-icon-active" />
+                <img src="assets/images/icons/button.svg" class="layout-menu-icon-inactive" />
+                <span>Button</span>
+            </a>
+            <div [ngClass]="{'submenushow': (buttonmenutitle.id == activeMenuId), 'submenuhide': (buttonmenutitle.id != activeMenuId)}">
+                <a [routerLink]="['/button']" (click)="menuActive = false">&#9679; Button</a>
+                <a [routerLink]="['/splitbutton']" (click)="menuActive = false">&#9679; SplitButton</a>
+            </div>
 
+        </div>
+    </div>
+    <div class="layout-mask" *ngIf="menuActive">
+    </div>
+
+    <div [ngClass]="{'layout-content' : isLogin}">
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+        <!-- <div class="content-section layout-footer clearfix">
+                <span>PrimeNG 7.0.0-beta.1</span>
+                <div class="footer-links">
+                    <a href="https://github.com/primefaces/primeng"><i class="fa fa-github"></i></a>
+                    <a href="https://twitter.com/prime_ng"><i class="fa fa-twitter"></i></a>
+                <div>
+            </div> -->
+    </div>
+
+</div>
