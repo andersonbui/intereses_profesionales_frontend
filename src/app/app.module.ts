@@ -31,6 +31,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MenuModule } from 'primeng/menu';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { RolGuard } from './guards/rol.guard';
+import { AppBoostrapModule } from './app-bootstrap/app-bootstrap.module';
+import { AdminUsuariosComponent } from './componentes/private-page/admin-usuarios/admin-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -42,9 +44,11 @@ import { RolGuard } from './guards/rol.guard';
     PrivatePageComponent,
     NotFoundPageComponent,
     StudentPageComponent,
-    EditStudentPageComponent
+    EditStudentPageComponent,
+    AdminUsuariosComponent
   ],
   imports: [
+    AppBoostrapModule,
     MenuModule,
     TabMenuModule,
     BrowserModule,

@@ -113,4 +113,22 @@ export class AuthService {
     }
     return false;
   }
+
+
+  ///// Role-based Authorization //////
+  canRead(user: Usuario): boolean {
+    console.log('canread user;  :', user);
+    const allowed = ['estudiante', 'admin', 'estudiante'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  canEdit(user: Usuario): boolean {
+    const allowed = ['admin', 'docente'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  canDelete(user: Usuario): boolean {
+    const allowed = ['admin'];
+    return this.checkAuthorization(user, allowed);
+  }
 }

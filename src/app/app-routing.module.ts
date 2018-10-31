@@ -10,6 +10,7 @@ import {NotFoundPageComponent} from './componentes/not-found-page/not-found-page
 import {AuthGuard} from './guards/auth.guard';
 import { StudentPageComponent } from './componentes/student-page/student-page.component';
 import { RolGuard } from './guards/rol.guard';
+import { AdminUsuariosComponent } from './componentes/private-page/admin-usuarios/admin-usuarios.component';
 
 const routes: Routes = [
   {path: '', component: LoginPageComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'private', component: PrivatePageComponent},
   {path: 'inputgroup', loadChildren: './componentes/inputgroup/inputgroupdemo.module#InputGroupDemoModule'},
   {path: 'registerStudent', component: StudentPageComponent},
+  {path: 'admin', component: AdminUsuariosComponent},
   {path: '**', component: NotFoundPageComponent}
 ];
 
