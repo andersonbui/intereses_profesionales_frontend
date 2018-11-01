@@ -11,9 +11,9 @@
             <!-- <div [ngClass]="{submenushow: (inputmenutitle.id == activeMenuId), 'submenuhide': (inputmenutitle.id != activeMenuId)}"> -->
             <div >
                 <a [routerLink]="['/gestion-estudiantes']" (click)="menuActive = false"> Gestion de Estudiantes</a>
-                <a [routerLink]="['/gestion-instituciones']" (click)="menuActive = false"> Gestion de instituciones</a>
-                <a [routerLink]="['/gestion-docentes']" (click)="menuActive = false"> Gestion de Docentes</a>
-            </div>
+                <a [routerLink]="['/institucion']" (click)="menuActive = false"> Instituciones</a>
+                <a [routerLink]="['/inputgroup']" (click)="menuActive = false"> Gestion de Docentes</a>
+            </div> 
         
             <a id="button_menutitle" #buttonmenutitle [class.active-menuitem]="buttonmenutitle.id == activeMenuId"
                 (click)="activeMenuId = (activeMenuId === buttonmenutitle.id ? null : buttonmenutitle.id)">
@@ -25,8 +25,8 @@
             <div >
                 <a [routerLink]="['/button']" (click)="menuActive = false"> Button</a>
                 <a [routerLink]="['/splitbutton']" (click)="menuActive = false"> SplitButton</a>
-            </div>
-
+            </div>https://firebase.google.com/pricing/?authuser=1
+            https://blog.couchbase.com/json-data-modeling-rdbms-users/
         </div>
     </div>
     <div class="layout-mask" *ngIf="menuActive">

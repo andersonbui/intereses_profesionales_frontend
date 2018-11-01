@@ -1,0 +1,55 @@
+<form (submit)="onSubmitAddStudent()">
+  <div class="form-group">
+    <label for="nombres">Nombres</label>
+    <input type="text" name="nombres" id="nombres" [(ngModel)]="persona.nombres" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="apellidos">Apellidos</label>
+    <input type="text" name="apellidos" id="apellidos" [(ngModel)]="persona.apellidos" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="tipoIdentificacion">Tipo identificación</label>
+    <input type="text" name="tipoIdentificacion" id="tipoIdentificacion" [(ngModel)]="persona.tipoIdentificacion" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="identificacion">Identificación</label>
+    <input type="text" name="identificacion" id="identificacion" [(ngModel)]="persona.identificacion" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" [(ngModel)]="persona.email" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="direccion">Dirección</label>
+    <input type="text" name="direccion" id="direccion" [(ngModel)]="persona.direccion" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="celular">Celular</label>
+    <input type="text" name="celular" id="celular" [(ngModel)]="persona.celular" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="pais">País</label>
+    <input type="text" name="pais" id="pais" [(ngModel)]="persona.pais" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="departamento">Departamento</label>
+    <input type="text" name="departamento" id="departamento" [(ngModel)]="persona.departamento" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="ciudad">Ciudad</label>
+    <input type="text" name="ciudad" id="ciudad" [(ngModel)]="persona.ciudad" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="fechaNacimiento">Fecha de nacimiento</label>
+    <input type="text" name="fechaNacimiento" id="fechaNacimiento" [(ngModel)]="persona.fechaNacimiento" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="sexo">Sexo</label>
+    <span class="badge badge-pill badge-dark"></span>
+    <select name="sexo" id="sexo" class="form-control">
+      <option>Femenino</option>
+      <option>Masculino</option>
+    </select>
+  </div>
+  <input type="submit" value="Modificar" class="btn btn-primary btn-block btn-lg">
+</form>

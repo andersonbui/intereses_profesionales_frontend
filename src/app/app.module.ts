@@ -22,7 +22,6 @@ import {environment} from '../environments/environment';
 import {AuthService} from './servicios/auth.service';
 import {AuthGuard} from './guards/auth.guard';
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
-import { StudentPageComponent } from './componentes/student-page/student-page.component';
 import { EditStudentPageComponent } from './componentes/edit-student-page/edit-student-page.component';
 
 import {AccordionModule} from 'primeng/accordion';     // accordion and accordion tab
@@ -33,9 +32,22 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { RolGuard } from './guards/rol.guard';
 import { AppBoostrapModule } from './app-bootstrap/app-bootstrap.module';
 import { AdminUsuariosComponent } from './componentes/private-page/admin-usuarios/admin-usuarios.component';
+import { InfoPersonalComponent } from './componentes/info-personal/info-personal.component';
+import { VerEstudianteComponent } from './componentes/ver-estudiante/ver-estudiante.component';
+import { EditarEstudianteComponent } from './componentes/estudiante/editar-estudiante/editar-estudiante.component';
+import { AgregarEstudianteComponent } from './componentes/estudiante/agregar-estudiante/agregar-estudiante.component';
+import { AgregarDocenteComponent } from './componentes/docente/agregar-docente/agregar-docente.component';
+import { VerDocenteComponent } from './componentes/docente/ver-docente/ver-docente.component';
+import { EditarDocenteComponent } from './componentes/docente/editar-docente/editar-docente.component';
+import { EditarInstitucionComponent } from './componentes/institucion/editar-institucion/editar-institucion.component';
+import { AgregarInstitucionComponent } from './componentes/institucion/agregar-institucion/agregar-institucion.component';
+import { DocenteComponent } from './componentes/docente/docente.component';
+import { EstudianteComponent } from './componentes/estudiante/estudiante.component';
+import { InstitucionService } from './servicios/institucion.service';
 
 @NgModule({
   declarations: [
+    InfoPersonalComponent,
     AppComponent,
     HomePageComponent,
     NavbarComponent,
@@ -43,9 +55,19 @@ import { AdminUsuariosComponent } from './componentes/private-page/admin-usuario
     LoginPageComponent,
     PrivatePageComponent,
     NotFoundPageComponent,
-    StudentPageComponent,
     EditStudentPageComponent,
-    AdminUsuariosComponent
+    AdminUsuariosComponent,
+    InfoPersonalComponent,
+    VerEstudianteComponent,
+    EditarEstudianteComponent,
+    AgregarEstudianteComponent,
+    AgregarDocenteComponent,
+    VerDocenteComponent,
+    EditarDocenteComponent,
+    EditarInstitucionComponent,
+    AgregarInstitucionComponent,
+    DocenteComponent,
+    EstudianteComponent
   ],
   imports: [
     AppBoostrapModule,
@@ -66,7 +88,8 @@ import { AdminUsuariosComponent } from './componentes/private-page/admin-usuario
     AuthGuard,
     FlashMessagesService,
     AngularFireDatabase,
-    RolGuard
+    RolGuard,
+    InstitucionService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { InputGroupDemo } from './inputgroupdemo';
+import { InstitucionComponent } from './institucion.component';
 
 @NgModule({
 	imports: [
 		RouterModule.forChild([
-			{ path: '', component: InputGroupDemo }
+			{ path: '', component: InstitucionComponent }
 		])
 	],
 	exports: [
 		RouterModule
 	]
 })
-export class InputGroupDemoRoutingModule { }
+export class InstitucionRoutingModule { }
